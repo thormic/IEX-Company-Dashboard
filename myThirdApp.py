@@ -58,12 +58,6 @@ def index(name="Anonymous"):
 }
     return template('charts', name=name, chartData=chartData)
 
-# @route('/table')
-# def html_table():
-#     results, company = DatabaseConn()
-#     table1 = TabHtml(results)
-#     return template('table', data=table1)
-
 @route('/table')
 def html_table():
     results, company = DatabaseConn()
@@ -78,27 +72,27 @@ def index(name="Maciej"):
     return template('index', message=messDict.get("ok", ""), loginName=name, text="loremipsum example text")
 
 
-@route('/bestMovies')
-def index(name="Maciej"):
-    messDict = {'error': "Something went wrong",
-                'ok': "Everything is ok."}
-    movies = [{"title":"Star Wars",
-     "score":10,
-     "review":"Lorem ipsum"},
-    {"title":"Django",
-     "score":9.9,
-     "review":"Lorem ipsum"},
-    {"title":"Fight Club",
-     "score":9.95,
-     "review":"Lorem ipsum"}]
-     
-
-    return template('movies', message=messDict.get("ok", ""), loginName=name, movies=movies)
-
-
 @route('/dashboard')
 def lolek():
     return template('dashboard')
+
+@route('/search')
+def search():
+    # ! TU INNA FUNKCJA DO POBIERANIA MOŻLIWYCH NAZW SPÓŁEK
+    results, company = DatabaseConn()
+    return template('choose_screen', company=company)
+
+@route('/john', method=['post', 'get'])
+def show():
+    company_name = request.forms.get('company')
+    start_date = request.forms.get('start_date')
+    end_date = request.forms.get('end_date')
+    results, company = DatabaseConn(company_name, start_date, end_date)
+    table = TabHtml(results)
+    return template('john', company=company_name, data=table)
+
+
+
 
 
 

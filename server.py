@@ -57,7 +57,7 @@ def login():
         users[loginName]["loggedIn"] = True
         users[loginName]["randStr"] = randStr
         users[loginName]["lastSeen"] = time.time()
-        
+
         redirect('/index')
         return True
     else:
@@ -69,10 +69,10 @@ def login():
 @app.route('/index')
 @app.route('/index/')
 @app.route('/index/<message>')
-def index(message=''):
+def index(message='', text=''):
     loginName = checkAuth()
     messDict = {'error': "Something went wrong",
                 'ok': "Everything is ok."}
-    return template('index', message=messDict.get(message, ""), loginName=loginName)
+    return template('index', message=messDict.get(message, ""), loginName=loginName, text=text)
 
-app.run(host='localhost', port=63700, reloader=False, debug=False)
+app.run(host='localhost', port=63700, reloader=True, debug=True)
