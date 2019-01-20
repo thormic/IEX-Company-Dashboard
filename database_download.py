@@ -11,6 +11,7 @@ def DataDownload(company="BABA", start_date='2018-12-23', end_date='2018-12-30')
                 where company='{comp}'
                 and (date between date('{start}') and date('{end}'))
                 """.format(comp=company, start=start_date, end=end_date)
+
     c.execute(sql_count)
     result = c.fetchone()
     work_days = result[0]

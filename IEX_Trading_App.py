@@ -18,6 +18,7 @@ from get_info import GetInfo
 from chart import CreatePlot
 from company_type_dict import FindName
 
+
 bottle.TEMPLATE_PATH.insert(0, 'views')
 
 session_opts = {
@@ -30,7 +31,6 @@ session_opts = {
 app = beaker.middleware.SessionMiddleware(bottle.app(), session_opts)
 
 CreateTables()
-
 
 @hook('before_request')
 def setup_request():
@@ -143,7 +143,6 @@ def show():
 def update_base():
     CompanyList()
     return template ('update_done')
-
 
 
 

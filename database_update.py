@@ -24,6 +24,7 @@ def DatabaseConn(company, start_date, end_date):
                and (date between date('{start}') and date('{end}'))
                order by date asc
                """.format(comp=company, start=start_date, end=end_date)
+
     results = pd.read_sql(query,conn)
     return results
     conn.close()

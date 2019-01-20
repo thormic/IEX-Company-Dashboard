@@ -12,4 +12,5 @@ def ShortName(company_name):
     query = "SELECT short_name from company_list where full_name='{}'".format(company_name)
     company = pd.read_sql(query,conn).iloc[0]['short_name']
     return company
+
     conn.close()
