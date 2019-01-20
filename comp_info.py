@@ -10,6 +10,7 @@ def CompanyList():
     df.reset_index(inplace=True)
     df = df[['symbol', 'date', 'name', 'type']]
     df.rename(columns={'symbol' : 'short_name', 'name' : 'full_name'}, inplace=True)
+    df['notes']=""
     df.to_sql('company_list', conn, if_exists='replace', index=False)
     conn.commit()
     return df

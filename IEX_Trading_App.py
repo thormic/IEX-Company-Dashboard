@@ -17,7 +17,7 @@ from create_tables import CreateTables
 from get_info import GetInfo
 from chart import CreatePlot
 from company_type_dict import FindName
-
+from add_note import AddNote, SeeNote
 
 bottle.TEMPLATE_PATH.insert(0, 'views')
 
@@ -46,7 +46,6 @@ def search():
     comp_names = ImportNames()
     list_of_companies = list(comp_names['full_name'])
     return template('start_screen', companies=list_of_companies)
-
 
 @route('/main_dashboard', method=['post', 'get'])
 def show():
@@ -118,6 +117,8 @@ def show():
         percent_change = str("+ " + "{:.2%}".format(percent_change))
     else:
         percent_change = str("- " + "{:.2%}".format(percent_change))
+    # Notka
+    note = SeeNote(company)
     return template('main_dashboard',
                     company=company_name,
                     table=table,
@@ -134,16 +135,24 @@ def show():
                     week52low = week52low,
                     percent_change = percent_change,
                     start_date = start_date,
-                    end_date = end_date)
+                    end_date = end_date,
+                    note = note)
 
+@route('/note')
+def add_note():
+    company = request.session['company']
+    return template('note_add', company=company)
 
-# @route('/notes')
+@route('/note_added', method=['post', 'get'])
+def get_note():
+    note = request.forms.get('note')
+    company = request.session['company']
+    AddNote(company, note)
+    return template('note_get')
 
 @route('/update')
 def update_base():
     CompanyList()
     return template ('update_done')
-
-
 
 run(app=app, host='localhost', port=8081, debug=True, reloader=True)

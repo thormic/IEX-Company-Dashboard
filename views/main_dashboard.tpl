@@ -155,7 +155,7 @@
                 <h1 style="padding: 15px 15px 15px 15px">Notes:
                 </h1>
                 <div class="card-body text-primary">
-                    <h4 class="card-title">lorem ipsum lorem ipsum</h4>
+                    <h4 class="card-title">{{!note}}</h4>
                 </div>
             </div>
         </div>
