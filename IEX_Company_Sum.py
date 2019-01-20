@@ -6,6 +6,7 @@ import datetime
 import sqlite3
 import pandas as pd
 import numpy as np
+from dateutil.relativedelta import relativedelta
 from iexfinance.stocks import get_historical_data
 from api_func import GetHistData
 from database_update import DatabaseConn
@@ -62,7 +63,8 @@ def show():
         if request.forms.get('start_date') is not None:
             request.session['start_date'] = request.forms.get('start_date')
         else:
-            request.session['start_date'] = '2018-09-01'
+            start_temp_date = str((datetime.datetime.today() - relativedelta(months=3)).strftime('%Y-%m-%d'))
+            request.session['start_date'] = start_temp_date
         start_date = request.session['start_date']
     else:
         start_date = request.session['start_date']
@@ -71,7 +73,8 @@ def show():
         if request.forms.get('end_date') is not None:
             request.session['end_date'] = request.forms.get('end_date')
         else:
-            request.session['end_date'] = '2018-12-01'
+            end_temp_date = str(datetime.datetime.today().strftime('%Y-%m-%d'))
+            request.session['end_date'] = end_temp_date
         end_date = request.session['end_date']
     else:
         end_date = request.session['end_date']
