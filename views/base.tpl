@@ -11,7 +11,7 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../static/img/mt.png">
+  <link rel="apple-touch-icon" sizes="s76x76" href="../static/img/mt.png">
   <!-- ikonka w zakładkach -->
   <link rel="icon" type="image/png" href="../static/img/mt.png">
   <title>
@@ -143,14 +143,6 @@
   <script src="../static/js/black-dashboard.min.js?v=1.0.0"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../static/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in static/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
-
 </body>
 
 </html>

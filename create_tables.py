@@ -40,5 +40,3 @@ def CreateTables():
     conn.commit()
     c.close()
     conn.close()
-
-CreateTables()
