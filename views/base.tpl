@@ -105,17 +105,7 @@
           <ul class="nav">
             <li class="nav-item">
               <a href="javascript:void(0)" class="nav-link">
-                IEX Trading Summarize
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                About Me
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Licenses
+                IEX Company Summarizer
               </a>
             </li>
           </ul>

@@ -1,7 +1,7 @@
 % rebase('base.tpl', title='Python')
 
 <form action="/main_dashboard" method="post">
-<div class="container-fluid" style="height: 700px">
+<div class="container-fluid" style="height: 750px">
     <div class="row">
         <div class="col-lg-12">
             <h1 style="text-align: center">Select desired company</h1>
