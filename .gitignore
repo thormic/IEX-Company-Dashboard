@@ -1,0 +1,5 @@
+session/
+logs/
+black-dashboard-html-v1.0.1/
+.vscode/
+__pycache__

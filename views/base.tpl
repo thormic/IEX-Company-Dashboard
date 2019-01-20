@@ -11,11 +11,11 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../static/img/apple-icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../static/img/mt.png">
   <!-- ikonka w zakładkach -->
-  <link rel="icon" type="image/png" href="../static/img/favicon.png">
+  <link rel="icon" type="image/png" href="../static/img/mt.png">
   <title>
-    IEX Trading Summarizer
+    IEX Company Summarizer
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -23,40 +23,58 @@
   <!-- Nucleo Icons -->
   <link href="../static/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <!-- .main-panel kolor backgroundu dla głównej-->
   <link href="../static/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 </head>
 
 <body class="">
   <div class="wrapper">
     <div class="sidebar">
-      <!--Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"-->
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-mini">
             BY
           </a>
-          <a href="javascript:void(0)" class="simple-text logo-normal">
+          <a href="https://s4.scoopwhoop.com/ach/bestie/19.gif" class="simple-text logo-normal">
             Michał Thor
           </a>
         </div>
         <ul class="nav">
-          <li class="active">
-            <a href="./dashboard.html">
-              <i class="tim-icons icon-chart-pie-36"></i>
+          <li>
+            <a href="/">
+              <i class="tim-icons icon-laptop"></i>
+              <p>Choose company</p>
+            </a>
+          </li>
+          <li>
+            <a href="/main_dashboard">
+              <i class="tim-icons icon-bullet-list-67"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="/charts">
-              <i class="tim-icons icon-atom"></i>
-              <p>Charts</p>
+            <a href="#charts_table">
+              <i class="tim-icons icon-chart-bar-32"></i>
+              <p>Charts and Table</p>
             </a>
           </li>
           <li>
-            <a href="/dashboard">
-              <i class="tim-icons icon-atom"></i>
-              <p>Dashboard</p>
+            <a href="#show_notes">
+              <i class="tim-icons icon-book-bookmark"></i>
+              <p>Show notes</p>
+            </a>
+          </li>
+          <li>
+            <a href="/note">
+              <i class="tim-icons icon-notes"></i>
+              <p>Add notes</p>
+            </a>
+          </li>
+          <li>
+            <a href="/update">
+              <i class="tim-icons icon-upload"></i>
+              <p>Update company database</p>
             </a>
           </li>
         </ul>
@@ -66,7 +84,7 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
         <div class="container-fluid">
-          <div class="navbar-wrapper">
+          <div class="navbar-wrapper" style="padding: 20px 0px 0px 0px">
             <div class="navbar-toggle d-inline">
               <button type="button" class="navbar-toggler">
                 <span class="navbar-toggler-bar bar1"></span>
@@ -74,7 +92,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="/">IEX Trading Summarize</a>
+            <a class="navbar-brand" href="/">IEX Company Summarizer</a>
           </div>
         </div>
       </nav>
@@ -82,7 +100,7 @@
       <div class="content">
         {{!base}}
       </div>
-      <footer class="footer">
+      <footer class="footer" style="bottom:0; width: 100%; display: inline-block;">
         <div class="container-fluid">
           <ul class="nav">
             <li class="nav-item">
@@ -106,7 +124,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script> made by
-            <a href="javascript:void(0)" style="color:white">Michał Thor</a>.
+            <a href="javascript:void(0)" style="color:white">Michał Thor</a>
           </div>
         </div>
       </footer>
@@ -132,6 +150,7 @@
 
     });
   </script>
+
 </body>
 
 </html>
