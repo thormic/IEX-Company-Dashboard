@@ -22,15 +22,6 @@
   <link href="../static/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-  <script>
-        $(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
-});
-  </script>
 </head>
 
 <body class="">
@@ -59,13 +50,13 @@
             </a>
           </li>
           <li>
-            <a href="#charts_table">
+            <a href="/main_dashboard#charts_table">
               <i class="tim-icons icon-chart-bar-32"></i>
               <p>Charts and Table</p>
             </a>
           </li>
           <li>
-            <a href="#show_notes">
+            <a href="/main_dashboard#show_notes">
               <i class="tim-icons icon-book-bookmark"></i>
               <p>Show notes</p>
             </a>

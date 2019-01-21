@@ -2,7 +2,7 @@ import sqlite3
 import pandas as pd
 from datetime import datetime
 from database_update import DatabaseConn
-def DataDownload(company="BABA", start_date='2018-12-23', end_date='2018-12-30'):
+def DataDownload(company, start_date, end_date):
     conn = sqlite3.connect('project_database.db')
     c = conn.cursor()
     sql_count = """
@@ -32,5 +32,5 @@ def DataDownload(company="BABA", start_date='2018-12-23', end_date='2018-12-30')
               """.format(comp=company, start=start_date, end=end_date)
         downloaded = pd.read_sql(sql, conn)
     downloaded['high_low_diff']=downloaded['high']-downloaded['low']
-    return downloaded
     conn.close()
+    return downloaded

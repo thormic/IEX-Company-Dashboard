@@ -84,7 +84,6 @@ def show():
         company = request.session['company']
     else:
         company = request.session['company']
-
     CompanyInfo(company)
     request.session['results'] = DataDownload(company,
                                               start_date,
