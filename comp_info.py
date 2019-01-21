@@ -13,7 +13,9 @@ def CompanyList():
     df['notes']=""
     df.to_sql('company_list', conn, if_exists='replace', index=False)
     conn.commit()
+    conn.close()
     return df
+
 
 
 def CompanyInfo(company):

@@ -3,7 +3,7 @@ def CreateTables():
     conn = sqlite3.connect('project_database.db')
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS company_hist (
-                    id integer,
+                    date text,
                     open real,
                     high real,
                     low real,

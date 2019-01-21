@@ -1,9 +1,13 @@
 import sqlite3
 import pandas as pd
+from comp_info import CompanyList
 def ImportNames():
     conn = sqlite3.connect('project_database.db')
     query = "SELECT short_name, full_name from company_list where full_name is not '' order by full_name asc"
     comp_names = pd.read_sql(query,conn)
+    if comp_names.empty is True:
+        CompanyList()
+        comp_names = pd.read_sql(query,conn)
     return comp_names
     conn.close()
 

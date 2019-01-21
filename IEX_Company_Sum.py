@@ -42,6 +42,7 @@ def static(path):
     return static_file(path, root='./static')
 
 @route('/')
+@route('')
 def search():
     request.session.clear()
     comp_names = ImportNames()
