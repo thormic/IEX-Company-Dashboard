@@ -25,6 +25,7 @@ def CompanyInfo(company):
     dic2 = comp.get_company()
     df = pd.DataFrame.from_dict(dic, orient='index')
     df = df.transpose()
+    df = df[['symbol', 'marketcap', 'week52high', 'week52low', 'ytdChangePercent']]
     df2 = pd.DataFrame.from_dict(dic2, orient='index')
     df2 = df2.transpose()
     df2 = df2.drop(columns=['tags'])
