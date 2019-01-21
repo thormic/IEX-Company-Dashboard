@@ -1,4 +1,5 @@
 % rebase('base.tpl', title='Python')
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12 d-flex align-items-stretch" style=" height: auto" >
