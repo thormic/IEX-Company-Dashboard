@@ -97,9 +97,9 @@ def show():
     request.session['company_info'] = GetInfo(company)
     results = request.session['results']
     company_info = request.session['company_info']
-    # Tabela
+    # Tabels
     table = TabHtml(results)
-    # Wykresy
+    # Plots
     barplot = CreatePlot(df=results,
                          x='date',
                          y='volume',
@@ -108,14 +108,14 @@ def show():
                          x='date',
                          y='high_low_diff',
                          type='scatterplot')
-    # Dane opisowe
+    # Descriptive data
     ceo = company_info.iloc[0]['CEO']
     industry = company_info.iloc[0]['industry']
     website = company_info.iloc[0]['website']
     description = company_info.iloc[0]['description']
     issueType = FindName(company_info.iloc[0]['type'])
     sector = company_info.iloc[0]['sector']
-    # Dane numeryczne
+    # Numerical data
     marketcap = company_info.iloc[0]['marketcap']
     marketcap = str("{:,}".format(marketcap)+ " $")
     week52high = company_info.iloc[0]['week52high']
@@ -125,7 +125,7 @@ def show():
         percent_change = str("+ " + "{:.2%}".format(percent_change))
     else:
         percent_change = str("- " + "{:.2%}".format(percent_change))
-    # Notka
+    # Note
     note = SeeNote(company)
     return template('main_dashboard',
                     company=company_name,
