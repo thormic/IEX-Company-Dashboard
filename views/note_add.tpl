@@ -7,7 +7,7 @@
             <div class="card border-primary mb-2" style="padding: 100px">
                 <h1 style="text-align: center">Add your note for {{!company}}</h1>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea" style="font-size: large; padding: 10px">Note:</label>
+                    <label for="exampleFormControlTextarea" style="font-size: large">Note:</label>
                         <textarea class="form-control"
                             name="note"
                             id="exampleFormControlTextarea"

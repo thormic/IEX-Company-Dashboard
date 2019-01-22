@@ -22,8 +22,8 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8" style="text-align: center">
-        Start:<input name="start_date" type="text" placeholder="YYYY-MM-DD">
-        End:<input name="end_date" type="text" placeholder="YYYY-MM-DD">
+        Start:<input name="start_date" type="text" placeholder="YYYY-MM-DD" value="{{start}}">
+        End:<input name="end_date" type="text" placeholder="YYYY-MM-DD" value="{{end}}">
         </div>
         <div class="col-lg-2"></div>
     </div>

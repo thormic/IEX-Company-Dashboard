@@ -2,7 +2,15 @@ import sqlite3
 import pandas as pd
 from datetime import datetime
 from database_update import DatabaseConn
+
+
+
 def DataDownload(company, start_date, end_date):
+    """
+    Takes company and dates as arguments, checks if data already exists in
+    the database, if not runs DatabaseConn() function and then returns
+    DataFrame for a given company and desired dates.
+    """
     conn = sqlite3.connect('project_database.db')
     c = conn.cursor()
     sql_count = """
@@ -11,7 +19,6 @@ def DataDownload(company, start_date, end_date):
                 where company='{comp}'
                 and (date between date('{start}') and date('{end}'))
                 """.format(comp=company, start=start_date, end=end_date)
-
     c.execute(sql_count)
     result = c.fetchone()
     work_days = result[0]

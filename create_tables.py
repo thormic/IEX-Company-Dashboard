@@ -1,5 +1,11 @@
 import sqlite3
+
+
+
 def CreateTables():
+    """
+    Creates all the neccessary tables if they do not exist already.
+    """
     conn = sqlite3.connect('project_database.db')
     c = conn.cursor()
     c.execute("""CREATE TABLE IF NOT EXISTS company_hist (

@@ -26,7 +26,9 @@ def CompanyList():
 
 def CompanyInfo(company):
     """
-    Takes company as an argument, creates comp variable
+    Takes company as an argument, creates two DataFrames from it and then
+    inserts it into database as tables key_info and company_info.
+    """
     conn = sqlite3.connect('project_database.db')
     comp = Stock(company)
     dic = comp.get_key_stats()

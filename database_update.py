@@ -1,7 +1,16 @@
 import sqlite3
 import pandas as pd
 from api_func import GetHistData
+
+
+
 def DatabaseConn(company, start_date, end_date):
+    """
+    Takes company name and dates as arguments and inserts all of the
+    desired information into already existing company_hist table
+    without duplicates. Returns DataFrame with desired information
+    for a given company and dates.
+    """
     conn = sqlite3.connect('project_database.db')
     c = conn.cursor()
     df = GetHistData(company=company, start_date=start_date, end_date=end_date)
@@ -18,7 +27,6 @@ def DatabaseConn(company, start_date, end_date):
                and (date between date('{start}') and date('{end}'))
                order by date asc
                """.format(comp=company, start=start_date, end=end_date)
-
     results = pd.read_sql(query,conn)
-    return results
     conn.close()
+    return results

@@ -1,7 +1,13 @@
 import sqlite3
 import pandas as pd
 
+
+
 def ComparisonInfo():
+    """
+    Returns summarized information about all the database contents from
+    table company_hist as a DataFrame.
+    """
     conn = sqlite3.connect('project_database.db')
     query = """SELECT
                cl.full_name as company_name,
@@ -17,6 +23,3 @@ def ComparisonInfo():
     results = pd.read_sql(query,conn)
     conn.close()
     return results
-
-
-print(ComparisonInfo())

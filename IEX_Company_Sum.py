@@ -47,7 +47,12 @@ def search():
     request.session.clear()
     comp_names = ImportNames()
     list_of_companies = list(comp_names['full_name'])
-    return template('start_screen', companies=list_of_companies)
+    start_temp_date = str((datetime.datetime.today() - relativedelta(months=3)).strftime('%Y-%m-%d'))
+    end_temp_date = str(datetime.datetime.today().strftime('%Y-%m-%d'))
+    return template('start_screen',
+                    companies=list_of_companies,
+                    start = start_temp_date,
+                    end = end_temp_date)
 
 @route('/main_dashboard', method=['post', 'get'])
 def show():
