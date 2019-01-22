@@ -4,7 +4,13 @@ from iexfinance import Stock
 from pandas.io.json import json_normalize
 import pandas as pd
 
+
+
 def CompanyList():
+    """
+    Downloads all of the companies names from pyEX library as a DataFrame
+    and inserts it into company_list table.
+    """
     conn = sqlite3.connect('project_database.db')
     df = p.symbolsDF()
     df.reset_index(inplace=True)
@@ -19,6 +25,8 @@ def CompanyList():
 
 
 def CompanyInfo(company):
+    """
+    Takes company as an argument, creates comp variable
     conn = sqlite3.connect('project_database.db')
     comp = Stock(company)
     dic = comp.get_key_stats()

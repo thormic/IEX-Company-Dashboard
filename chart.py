@@ -5,8 +5,14 @@ import pandas as pd
 import numpy as np
 import json
 
-def CreatePlot(df, x, y, type):
 
+
+def CreatePlot(df, x, y, type):
+    """
+    Takes df (pandas.DataFrame) argument, x and y, which are columns in df
+    and type of the plot to be produced. returns json which is then compiled
+    by plotly library into interactive plot.
+    """
     if type == 'barplot':
         data = [
             go.Bar(
