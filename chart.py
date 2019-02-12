@@ -38,7 +38,7 @@ def CreatePlot(df, x, y, type):
                 y=df['{}'.format(y)],
                 mode = 'lines+markers',
                 marker = dict(
-                              color = '#6c757d'
+                              color = '#ffd600'
                          )
 
     )]
